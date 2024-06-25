@@ -9,3 +9,4 @@
 #   Create a git repository on github
 #   Now you can push the changes done in vscode to git repository directly by using source control or we can use git add .
 #   we can commit by using git commit -m "my first commit"
+#   Now by clicking on Publish sys option we get a option to choose the repository we have to choose the public repository and a public repository get created on github for the same foder name 
