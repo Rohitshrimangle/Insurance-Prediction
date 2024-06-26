@@ -24,3 +24,5 @@
 # Now we have our own package and we need to install it so what we can do is we can use -e . in requirements.txt with other packages and now install the requirements using pip install -r requirements.txt here we can see the local file aswell
 
 # Now we can see all the packages by using pip list command
+
+# Now we can add the csv file in the data folder and start working on EDA on notebook before thta install the ipykernel and select the interpreter
