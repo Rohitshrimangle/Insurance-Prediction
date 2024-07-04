@@ -17,12 +17,27 @@
 # Now we have to create evironment and other installations but if you don't wan t to do it manually then we have to create a script for that we will create a file init_setup.sh here sh (shell) we use this script because if i dont want to write a mannual command and want to automate that process so we will write all commands in shell script this is a linux system script we can't use this in windows unless and untill we use git bash
 #  Now use bash init_setup.sh command in bash terminal
 # some times the source activate command in shell script don't work in this case we need to activate the environment by giving manual command source activate ./env
-#  Now we want to add more files to carry out the other function instead of creating the various files manually we can write a script or code so that all the required files withe their extension gets in one shot, for this purpose we have to create a template.py file and in which we have to specify the required files and other stuff you can also copy the script from the end-to-end_project repository and now you have to run template.py and we get all the required files we have the architecture struture which is also called as boiller plate which is universal data science architecture boiller plate is noting which is predefined file
+#  Now we want to add more files to carry out the other function instead of creating the various files manually we can write a script or code so that all the required files with their extension gets in one shot, for this purpose we have to create a template.py file and in which we have to specify the required files and other stuff you can also copy the script from the end-to-end_project repository and now you have to run template.py and we get all the required files we have the architecture struture which is also called as boiller plate which is universal, data science architecture boiller plate is noting which is predefined file
 
-# init file:- we can see init file in every folder the reason is inside a folder if we have file/module/.py file this complte thing is called as package in the python Eg:- folder-> src-.py file- class/def --- (src - _init__.py - class/def) in this way we can create our own packages, How python knows that it is your local package so to justify this thing we use __init__.py this is a rule from python side if you want to crate your own local package you have to create __init__.py file 
+# init file:- we can see init file in every folder the reason is inside a folder if we have file/module/.py file this complte thing is called as package in the python Eg:- folder-> src-.py file- class/def --- (src - _init__.py - class/def) in this way we can create our own packages, How python knows that it is your local package so to justify this thing we use __init__.py this is a rule from python side if you want to create your own local package you have to create __init__.py file 
 
 # Now we have our own package and we need to install it so what we can do is we can use -e . in requirements.txt with other packages and now install the requirements using pip install -r requirements.txt here we can see the local file aswell
 
 # Now we can see all the packages by using pip list command
 
-# Now we can add the csv file in the data folder and start working on EDA on notebook before thta install the ipykernel and select the interpreter
+# Now we can add the csv file in the data folder and start working on EDA on notebook before that install the ipykernel and select the interpreter
+
+# Now next step is start working on EDA preprocessing where we clean, arrange or mange the data in orgnized manner. We work on the features which are important and those feature are not of any use we remove them. EDA is very interesting job here we can play with the data such as we get to the info about data how manny coloumns, rows are there how many null rows or columns which feature is having maximun null values based on it we decide wheather that feature is important or not and also we cheek lineartiy between features and decides which is independent and dependent features. We can aslo explore the data in visual manner with the help of seaborn and matplotlib libraries overall feature engineering is done.
+
+# Next is modelling here after completing the EDA we have to decide which algorithm is best suitable for the model based on the evaluation parameters such r2 score, mse, rmse, mae etc
+
+# Next is components and pipeline here, in EDA and modelling is done in ipynb i.e notebooks which are cellular in nature but we need to do modular codeing and in modular coding we can't code in celluar ipynb file we need to code in .py python file here in modular coding we sagregate the task in multiple files.
+
+# Start working on Data Ingestion, Data Transformation, Model Trainer, Logger and exception file
+
+# utlis is a helper file it is a helping entity.
+
+# Logger file is used to store the records of changes done in files with date and time with message.
+
+# mentain a rough ipynb file to experiment or code something before coding it into .py file
+
