@@ -41,3 +41,7 @@
 
 # mentain a rough ipynb file to experiment or code something before coding it into .py file
 
+# We had done exception handling in the exception.py file for the errors
+
+# Data ingestion - import libraries in it pandas numpy local InsurancePrediction from sklearn train_test_split dataclasses and pathlib from path
+
