@@ -45,3 +45,6 @@
 
 # Data ingestion - import libraries in it pandas numpy local InsurancePrediction from sklearn train_test_split dataclasses and pathlib from path
 
+# Pipeline:- Now we have to collect all the components like data ingestion data transformation  and model trainer in pipline file in training pipeline
+
+# Data Ingestion:- I faced errors and many issues in data ingestion while creating artifacts with all raw, test and train file all togther because of line no 29,38,29

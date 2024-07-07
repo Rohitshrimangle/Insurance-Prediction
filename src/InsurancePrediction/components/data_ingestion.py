@@ -17,16 +17,16 @@ class DataIngestionConfig:
 
 class DataIngestion:
     def __init__(self):
-        self.ingestion_configDataIngestionConfig()
+        self.ingestion_config=DataIngestionConfig()
 
     def initiate_data_ingestion(self):
         logging.info("data ingestion started")
 
         try:
-            data=pd.read_csv(Path(os.path.join("notebook/data",'insurance.csv')))
+            data=pd.read_csv(Path(os.path.join("notebooks\data",'insurance.csv')))
             logging.info('i have performed train test split')
 
-            os.makedirs(os.path.join(self.ingestion_config.raw_data_path),exists=True)
+            os.makedirs(os.path.dirname(os.path.join(self.ingestion_config.raw_data_path)),exist_ok=True)
             data.to_csv(self.ingestion_config.raw_data_path,index=False)
             logging.info('i have saved the raw data in artifact folder')
 
@@ -35,12 +35,16 @@ class DataIngestion:
             train_data,test_data=train_test_split(data,test_size=0.25)
             logging.info("train test split completed")
 
-            train_data.to_csv(self.ingestion.config.train_data_path,index=False)
-            test_data.to_csv(self.initiate_config.test_data_path,index=False)
+            train_data.to_csv(self.ingestion_config.train_data_path,index=False)
+            test_data.to_csv(self.ingestion_config.test_data_path,index=False)
 
-            logging.info['data ingestion part completed']
+            logging.info('data ingestion part completed')
 
+            return (
 
+                self.ingestion_config.train_data_path,
+                self.ingestion_config.test_data_path
+            )
 
 
 
