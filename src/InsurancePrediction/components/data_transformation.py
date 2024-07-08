@@ -92,9 +92,23 @@ class DataTransformation:
 
             logging.info("Applying preprocessing object on training ans testing datasets.")
 
+
+            train_arr = np.c_[input_feature_train_arr,np.arry(target_feature_train_df)]
+            test_arr = np.c_[input_feature_test_arr,np.arry(target_feature_test_df)]
+
             save_object(
                 file_path=self.data_transformation_config.preproccessor_obj_file_path,
                 obj=preprocessor_obj
+            )
+
+
+
+            logging.info('Preprocessor pickle file saved')
+
+
+            return(
+                train_arr,
+                test_arr
             )
 
             
