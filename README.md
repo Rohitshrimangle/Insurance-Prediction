@@ -48,3 +48,5 @@
 # Pipeline:- Now we have to collect all the components like data ingestion data transformation  and model trainer in pipline file in training pipeline
 
 # Data Ingestion:- I faced errors and many issues in data ingestion while creating artifacts with all raw, test and train file all togther because of line no 29,38,29
+
+# Remember while working on utils file we have to create utils.py inside utils folder while creating keep your eye on it's spelling and ignore the waring for  utils.utils import evaluate and save_object

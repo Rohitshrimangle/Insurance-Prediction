@@ -53,7 +53,7 @@ class DataTransformation:
             )
 
             Preprocessor=ColumnTransformer([
-                ('num_pipeline',num_pipeline,numerical_cols)
+                ('num_pipeline',num_pipeline,numerical_cols),
                 ('cat_pipeline',cat_pipeline,categorical_cols)
             ])
 
@@ -101,8 +101,6 @@ class DataTransformation:
                 obj=preprocessor_obj
             )
 
-
-
             logging.info('Preprocessor pickle file saved')
 
 
@@ -110,9 +108,6 @@ class DataTransformation:
                 train_arr,
                 test_arr
             )
-
-            
-            
 
 
         except Exception as e:
