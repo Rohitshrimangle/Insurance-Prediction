@@ -14,87 +14,81 @@ from sklearn.preprocessing import OrdinalEncoder, StandardScaler
 from src.InsurancePrediction.utils.utils import save_object
 
 class DataTransformationConfig:
-    preproccessor_obj_file_path=os.path.join("artifacts","preprocessor.pk1")
+    preproccessor_obj_file_path = os.path.join("artifacts", "preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
-        self.data_transformation_config=DataTransformationConfig()
-
-
+        self.data_transformation_config = DataTransformationConfig()
 
     def get_data_transformation(self):
-        
         try:
-
             logging.info("Data Transformation initiated")
 
-            categorical_cols = ['sex','smoker','region']
-            numerical_cols = ['age','bmi','children','expenses']
+            categorical_cols = ['sex', 'smoker', 'region']
+            numerical_cols = ['age', 'bmi', 'children', 'expenses']
 
             sex_categories = ['male', 'female']
             smoker_categories = ['no', 'yes']
-            region_categories = ['southwest','southeast','northeast','northwest']
+            region_categories = ['southwest', 'southeast', 'northeast', 'northwest']
 
             logging.info('Pipeline initiated')
 
-            num_pipeline=Pipeline(
+            num_pipeline = Pipeline(
                 steps=[
-                    ('imputer',SimpleImputer(strategy='median')),
+                    ('imputer', SimpleImputer(strategy='median')),
                     ('scaler', StandardScaler())
                 ]
             )
 
-            cat_pipeline=Pipeline(
+            cat_pipeline = Pipeline(
                 steps=[
-                    ('imputer',SimpleImputer(strategy='most_frequent')),
-                    ('ordinalencoder',OrdinalEncoder(categories=['sex_categories','smoker_categories','region_categories'])),
-                    ('scaler',StandardScaler())
+                    ('imputer', SimpleImputer(strategy='most_frequent')),
+                    ('ordinalencoder', OrdinalEncoder(categories=[sex_categories, smoker_categories, region_categories])),
+                    ('scaler', StandardScaler())
                 ]
             )
 
-            Preprocessor=ColumnTransformer([
-                ('num_pipeline',num_pipeline,numerical_cols),
-                ('cat_pipeline',cat_pipeline,categorical_cols)
+            preprocessor = ColumnTransformer([
+                ('num_pipeline', num_pipeline, numerical_cols),
+                ('cat_pipeline', cat_pipeline, categorical_cols)
             ])
 
-            return Preprocessor
+            return preprocessor
 
         except Exception as e:
-            logging.info("Exception occcured in the initiate_datatransformation")
+            logging.error("Exception occurred in the get_data_transformation method")
+            raise customexception(e, sys)
 
-            raise customexception(e,sys)
-
-    def initialize_data_transformation(self,train_path,test_path):
-
+    def initialize_data_transformation(self, train_path, test_path):
         try:
-            train_df=pd.read_csv(train_path)
-            test_df=pd.read_csv(test_path)
+            train_df = pd.read_csv(train_path)
+            test_df = pd.read_csv(test_path)
 
-            logging.info("read train and test data completly")
-            logging.info(f"Train Dataframe Head:\n{train_df.head().to.string()}")
-            logging.info(f"Test Dataframe Head:\n{test_df.head().to.string()}")
+            logging.info("Read train and test data completely")
+            logging.info(f"Train DataFrame Columns: {train_df.columns}")
+            logging.info(f"Test DataFrame Columns: {test_df.columns}")
 
             preprocessor_obj = self.get_data_transformation()
 
-            target_column_name = 'expense'
-            drop_columns = [target_column_name,'id']
+            target_column_name = 'expenses'
+            drop_columns = [target_column_name]
 
-            input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
-            target_feature_train_df=train_df[target_column_name]
+            input_feature_train_df = train_df.drop(columns=drop_columns)
+            target_feature_train_df = train_df[target_column_name]
 
+            input_feature_test_df = test_df.drop(columns=drop_columns, axis=1)
+            target_feature_test_df = test_df[target_column_name]
 
-            input_feature_test_df = test_df.drop(columns=drop_columns,axis=1)
-            target_feature_test_df=test_df[target_column_name]
+            logging.info(f"Input Feature Train DataFrame Columns: {input_feature_train_df.columns}")
+            logging.info(f"Input Feature Test DataFrame Columns: {input_feature_test_df.columns}")
 
-            input_feature_train_arr= preprocessor_obj.fit_transform(input_feature_train_df)
+            input_feature_train_arr = preprocessor_obj.fit_transform(input_feature_train_df)
+            input_feature_test_arr = preprocessor_obj.transform(input_feature_test_df)
 
-            input_feature_test_arr= preprocessor_obj.transform(input_feature_test_df)
+            logging.info("Applying preprocessing object on training and testing datasets.")
 
-            logging.info("Applying preprocessing object on training ans testing datasets.")
-
-
-            train_arr = np.c_[input_feature_train_arr,np.arry(target_feature_train_df)]
-            test_arr = np.c_[input_feature_test_arr,np.arry(target_feature_test_df)]
+            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
+            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
 
             save_object(
                 file_path=self.data_transformation_config.preproccessor_obj_file_path,
@@ -103,14 +97,14 @@ class DataTransformation:
 
             logging.info('Preprocessor pickle file saved')
 
-
-            return(
-                train_arr,
-                test_arr
-            )
-
+            return train_arr, test_arr
 
         except Exception as e:
-            logging.info("Exception occcured in the initiate_datatransformation")
+            logging.error("Exception occurred in the initialize_data_transformation method")
+            raise customexception(e, sys)
 
-            raise customexception(e,sys)
+# Usage
+#train_path = 'path_to_train_data.csv'
+#test_path = 'path_to_test_data.csv'
+#data_transformation = DataTransformation()
+#train_arr, test_arr = data_transformation.initialize_data_transformation(train_path, test_path)
