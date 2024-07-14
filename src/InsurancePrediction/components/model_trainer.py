@@ -1,33 +1,26 @@
-import os
-import sys
 import pandas as pd
 import numpy as np
-from dataclasses import dataclass
-from src.InsurancePrediction.exception import customexception
+import os
+import sys
 from src.InsurancePrediction.logger import logging
-
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OrdinalEncoder, StandardScaler
-
+from src.InsurancePrediction.exception import customexception
+from dataclasses import dataclass
 from src.InsurancePrediction.utils.utils import save_object
 from src.InsurancePrediction.utils.utils import evaluate_model
 
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
-from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.linear_model import LinearRegression, Ridge,Lasso,ElasticNet
 
 
+@dataclass 
 class ModelTrainerConfig:
-    trained_model_file_path = os.path.join('artifacts','model.pk1')
-
-
-
+    trained_model_file_path = os.path.join('artifacts','model.pkl')
+    
+    
 class ModelTrainer:
     def __init__(self):
         self.model_trainer_config = ModelTrainerConfig()
-
-    def initiate_model_training(self,train_array,test_array):
+    
+    def initate_model_training(self,train_array,test_array):
         try:
             logging.info('Splitting Dependent and Independent variables from train and test data')
             X_train, y_train, X_test, y_test = (
@@ -41,8 +34,7 @@ class ModelTrainer:
             'LinearRegression':LinearRegression(),
             'Lasso':Lasso(),
             'Ridge':Ridge(),
-            'Elasticnet':ElasticNet(),
-            'GradientBoostingRegressor':GradientBoostingRegressor()
+            'Elasticnet':ElasticNet()
         }
             
             model_report:dict=evaluate_model(X_train,y_train,X_test,y_test,models)
@@ -67,8 +59,11 @@ class ModelTrainer:
                  file_path=self.model_trainer_config.trained_model_file_path,
                  obj=best_model
             )
-
+          
 
         except Exception as e:
             logging.info('Exception occured at Model Training')
             raise customexception(e,sys)
+
+        
+    
