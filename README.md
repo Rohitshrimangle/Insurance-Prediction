@@ -52,3 +52,7 @@
 # Remember while working on utils file we have to create utils.py inside utils folder while creating keep your eye on it's spelling and ignore the waring for  utils.utils import evaluate and save_object
 
 # very tough but resolved the error it took a week now resolved be carefull from line no. 73 to 116 in data transformation in class initialize_data_transformation
+
+# Finally issue resolved 
+
+# Pipeline:- prediction pipline
