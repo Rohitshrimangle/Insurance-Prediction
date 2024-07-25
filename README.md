@@ -59,4 +59,4 @@
 
 # UI Part done :- Template folder created index.html, form.html and result.html files created for user interface, Some chages done in UI part in this process app.py file also plays a important role.
 
-# I was trying to deploy this on render as it is a free deployer
+# I was trying to deploy this on render as it is a free deployer.
