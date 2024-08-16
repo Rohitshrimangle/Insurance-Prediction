@@ -1,7 +1,7 @@
 
 # Insurance-Prediction
 
-This is my intership project I will show each and every step
+### This is my intership project I will show each and every step
 
 
 Description: The purposes of this predictive model is to look into different features to observe their relationship, and plot a multiple linear regression based on several features of individual such as age, physical/family condition and location against their existing medical expense to be used for predicting future medical expenses of individuals that help medical insurance to make decision on charging the premium.
