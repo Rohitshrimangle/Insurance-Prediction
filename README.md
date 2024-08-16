@@ -11,7 +11,7 @@ Outcome: We have developed a ML model which will predict the insurance price req
 I have attached detailed reports and any relevant files for each project. Please let me know if you need any additional information or if there are any areas where you would like me to focus further
 ## Setup
 
-- 1 Very first step is create a folder anywhere on your system
+-1  Very first step is create a folder anywhere on your system
 
 - Now open this folder in VScode
 
