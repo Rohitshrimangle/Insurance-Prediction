@@ -49,47 +49,47 @@ directly by using source control or we can use git add .
 
 [Documentation](https://drive.google.com/drive/folders/1fcR_QdDKEI_yHGfoq2DTTnCnyyq9B8_L?usp=drive_link)
 
-init file:- we can see init file in every folder the reason is inside a folder if we have file/module/.py file this complte thing is called as package in the python Eg:- folder-> src-.py file- class/def --- (src - _init__.py - class/def) in this way we can create our own packages, How python knows that it is your local package so to justify this thing we use __init__.py this is a rule from python side if you want to create your own local package you have to create __init__.py file 
+- init file:- we can see init file in every folder the reason is inside a folder if we have file/module/.py file this complte thing is called as package in the python Eg:- folder-> src-.py file- class/def --- (src - _init__.py - class/def) in this way we can create our own packages, How python knows that it is your local package so to justify this thing we use __init__.py this is a rule from python side if you want to create your own local package you have to create __init__.py file 
 
-Now we have our own package and we need to install it so what we can do is we can use -e . in requirements.txt with other packages and now install the requirements using pip install -r requirements.txt here we can see the local file aswell
+- Now we have our own package and we need to install it so what we can do is we can use -e . in requirements.txt with other packages and now install the requirements using pip install -r requirements.txt here we can see the local file aswell
 
-Now we can see all the packages by using pip list command
+- Now we can see all the packages by using pip list command
 
-Now we can add the csv file in the data folder and start working on EDA on notebook before that install the ipykernel and select the interpreter
+- Now we can add the csv file in the data folder and start working on EDA on notebook before that install the ipykernel and select the interpreter
 
-Now next step is start working on EDA preprocessing where we clean, arrange or mange the data in orgnized manner. We work on the features which are important and those feature are not of any use we remove them. EDA is very interesting job here we can play with the data such as we get to the info about data how manny coloumns, rows are there how many null rows or columns which feature is having maximun null values based on it we decide wheather that feature is important or not and also we cheek lineartiy between features and decides which is independent and dependent features. We can aslo explore the data in visual manner with the help of seaborn and matplotlib libraries overall feature engineering is done.
+- Now next step is start working on EDA preprocessing where we clean, arrange or mange the data in orgnized manner. We work on the features which are important and those feature are not of any use we remove them. EDA is very interesting job here we can play with the data such as we get to the info about data how manny coloumns, rows are there how many null rows or columns which feature is having maximun null values based on it we decide wheather that feature is important or not and also we cheek lineartiy between features and decides which is independent and dependent features. We can aslo explore the data in visual manner with the help of seaborn and matplotlib libraries overall feature engineering is done.
 
-Next is modelling here after completing the EDA we have to decide which algorithm is best suitable for the model based on the evaluation parameters such r2 score, mse, rmse, mae etc
+- Next is modelling here after completing the EDA we have to decide which algorithm is best suitable for the model based on the evaluation parameters such r2 score, mse, rmse, mae etc
 
-Next is components and pipeline here, in EDA and modelling is done in ipynb i.e notebooks which are cellular in nature but we need to do modular codeing and in modular coding we can't code in celluar ipynb file we need to code in .py python file here in modular coding we sagregate the task in multiple files.
+- Next is components and pipeline here, in EDA and modelling is done in ipynb i.e notebooks which are cellular in nature but we need to do modular codeing and in modular coding we can't code in celluar ipynb file we need to code in .py python file here in modular coding we sagregate the task in multiple files.
 
-Start working on Data Ingestion, Data Transformation, Model Trainer, Logger and exception file
+- Start working on Data Ingestion, Data Transformation, Model Trainer, Logger and exception file
 
-utlis is a helper file it is a helping entity.
+- utlis is a helper file it is a helping entity.
 
-Logger file is used to store the records of changes done in files with date and time with message.
+- Logger file is used to store the records of changes done in files with date and time with message.
 
-Mentain a rough ipynb file to experiment or code something before coding it into .py file
+- Mentain a rough ipynb file to experiment or code something before coding it into .py file
 
-We had done exception handling in the exception.py file for the errors
+- We had done exception handling in the exception.py file for the errors
 
-Data ingestion - import libraries in it pandas numpy local InsurancePrediction from sklearn train_test_split dataclasses and pathlib from path
+- Data ingestion - import libraries in it pandas numpy local InsurancePrediction from sklearn train_test_split dataclasses and pathlib from path
 
-Pipeline:- Now we have to collect all the components like data ingestion data transformation  and model trainer in pipline file in training pipeline
+- Pipeline:- Now we have to collect all the components like data ingestion data transformation  and model trainer in pipline file in training pipeline
 
-Data Ingestion:- I faced errors and many issues in data ingestion while creating artifacts with all raw, test and train file all togther because of line no 29,38,29
+- Data Ingestion:- I faced errors and many issues in data ingestion while creating artifacts with all raw, test and train file all togther because of line no 29,38,29
 
-Remember while working on utils file we have to create utils.py inside utils folder while creating keep your eye on it's spelling and ignore the waring for  utils.utils import evaluate and save_object
+- Remember while working on utils file we have to create utils.py inside utils folder while creating keep your eye on it's spelling and ignore the waring for  utils.utils import evaluate and save_object
 
-very tough but resolved the error it took a week now resolved be carefull from line no. 73 to 116 in data transformation in class initialize_data_transformation
+- Very tough but resolved the error it took a week now resolved be carefull from line no. 73 to 116 in data transformation in class initialize_data_transformation
 
-Finally issue resolved 
+- Finally issue resolved 
 
-Pipeline:- prediction pipline
+- Pipeline:- prediction pipline
 
-UI Part done :- Template folder created index.html, form.html and result.html files created for user interface, Some chages done in UI part in this process app.py file also plays a important role.
+- UI Part done :- Template folder created index.html, form.html and result.html files created for user interface, Some chages done in UI part in this process app.py file also plays a important role.
 
-I was trying to deploy this on render as it is a free deployer.
+- I was trying to deploy this on render as it is a free deployer.
 
 
 
