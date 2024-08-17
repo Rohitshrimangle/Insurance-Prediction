@@ -36,7 +36,7 @@ directly by using source control or we can use git add .
 
 - Create a licence file on github
 
-- Now fetch all this changes done on github on your local system by using ### git pull command on your terminal
+- Now fetch all this changes done on github on your local system by using **git pull** command on your terminal
 
 - Now we have to create evironment and other installations but if you don't wan t to do it manually then we have to create a script for that we will create a file init_setup.sh here sh (shell) we use this script because if i dont want to write a mannual command and want to automate that process so we will write all commands in shell script this is a linux system script we can't use this in windows unless and untill we use git bash
 
