@@ -51,7 +51,7 @@ directly by using source control or we can use **git add .**
 
 - init file:- we can see init file in every folder the reason is inside a folder if we have file/module/.py file this complte thing is called as package in the python Eg:- folder-> src-.py file- class/def --- (src - _init__.py - class/def) in this way we can create our own packages, How python knows that it is your local package so to justify this thing we use __init__.py this is a rule from python side if you want to create your own local package you have to create __init__.py file 
 
-- Now we have our own package and we need to install it so what we can do is we can use -e . in requirements.txt with other packages and now install the requirements using pip install -r requirements.txt here we can see the local file aswell
+- Now we have our own package and we need to install it so what we can do is we can use **-e .** in requirements.txt with other packages and now install the requirements using pip install -r requirements.txt here we can see the local file aswell
 
 - Now we can see all the packages by using pip list command
 
