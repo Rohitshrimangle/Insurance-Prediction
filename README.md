@@ -19,14 +19,14 @@ I have attached detailed reports and any relevant files for each project. Please
 
 - Open new terminal gitbash or command promt
 
-- Now initialize the git by giving the command git init
+- Now initialize the git by giving the command **git init**
 
 - Create a git repository on github
 
 - Now you can push the changes done in vscode to git repository 
-directly by using source control or we can use git add .
+directly by using source control or we can use **git add .**
 
-- We can commit by using git commit -m "my first commit"
+- We can commit by using **git commit -m "my first commit"**
 
 - Now by clicking on sync changes option we get a option to choose the repository we have to choose the public repository and a public repository get created on github for the same foder name
 
@@ -40,7 +40,7 @@ directly by using source control or we can use git add .
 
 - Now we have to create evironment and other installations but if you don't wan t to do it manually then we have to create a script for that we will create a file init_setup.sh here sh (shell) we use this script because if i dont want to write a mannual command and want to automate that process so we will write all commands in shell script this is a linux system script we can't use this in windows unless and untill we use git bash
 
-- Now use bash init_setup.sh command in bash terminal
+- Now use **bash init_setup.sh** command in bash terminal
 - Some times the source activate command in shell script don't work in this case we need to activate the environment by giving manual command source activate ./env
 
 - Now we want to add more files to carry out the other function instead of creating the various files manually we can write a script or code so that all the required files with their extension gets in one shot, for this purpose we have to create a template.py file and in which we have to specify the required files and other stuff you can also copy the script from the end-to-end_project repository and now you have to run template.py and we get all the required files we have the architecture struture which is also called as boiller plate which is universal, data science architecture boiller plate is noting which is predefined file
